@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Letter to Roman Numeral Converter</title>
+  </head>
+  <body>
+    <h1>Letter to Roman Numeral Converter</h1>
+    <form>
+      <label for="letter-input">Enter a letter:</label>
+      <input type="text" id="letter-input" name="letter">
+      <button type="button" onclick="convertLetter()">Convert</button>
+    </form>
+    <p id="conversion-result"></p>
+    <script>
+      function convertLetter() {
+        const romanNumerals = {
+          'A': 'I',
+          'B': 'II',
+          'C': 'III',
+          'D': 'IV',
+          'E': 'V',
+          'F': 'VI',
+          'G': 'VII',
+          'H': 'VIII',
+          'I': 'IX',
+          'J': 'X',
+          'K': 'XI',
+          'L': 'XII',
+          'M': 'XIII',
+          'N': 'XIV',
+          'O': 'XV',
+          'P': 'XVI',
+          'Q': 'XVII',
+          'R': 'XVIII',
+          'S': 'XIX',
+          'T': 'XX',
+          'U': 'XXI',
+          'V': 'XXII',
+          'W': 'XXIII',
+          'X': 'XXIV',
+          'Y': 'XXV',
+          'Z': 'XXVI'
+        };
+
+        const letterInput = document.getElementById('letter-input');
+        const conversionResult = document.getElementById('conversion-result');
+
+        const inputLetter = letterInput.value.toUpperCase();
+
+        if (romanNumerals.hasOwnProperty(inputLetter)) {
+          const romanNumeral = romanNumerals[inputLetter];
+          conversionResult.innerText = `The Roman numeral for ${inputLetter} is ${romanNumeral}.`;
+        } else {
+          conversionResult.innerText = `Invalid input. Please enter a letter A-Z.`;
+        }
+      }
+    </script>
+  </body>
+</html>
